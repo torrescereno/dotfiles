@@ -17,8 +17,8 @@ function M.config()
 		sources = {
 			formatting.stylua,
 			formatting.prettier,
-			formatting.black,
-			diagnostics.pylint,
+			-- formatting.black,
+			-- diagnostics.pylint,
 			completion.spell,
 		},
 	})

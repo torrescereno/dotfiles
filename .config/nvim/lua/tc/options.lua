@@ -26,9 +26,9 @@ opt.shiftround = true
 opt.scrolloff = 8
 
 -- #
-
+opt.maxmempattern = 10000
 -- Mostly just for cmp
-vim.opt.completeopt = { "menuone", "noselect" }
+opt.completeopt = { "menuone", "noselect" }
 
 -- Always show tabs
 opt.showtabline = 1
