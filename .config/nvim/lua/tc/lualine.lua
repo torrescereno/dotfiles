@@ -6,7 +6,6 @@ local M = {
 }
 
 function M.config()
-
 	require("lualine").setup({
 		options = {
 			component_separators = { left = "", right = "" },
@@ -16,7 +15,7 @@ function M.config()
 		sections = {
 			-- lualine_a = {},
 			lualine_b = { "branch", "encoding" },
-			lualine_c = { "diagnostics", "fileformat" },
+			lualine_c = { "diagnostics", "fileformat", "filename" },
 			lualine_x = { "copilot", "filetype" },
 			lualine_y = { "progress" },
 			lualine_z = {},

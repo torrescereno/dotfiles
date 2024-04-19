@@ -15,7 +15,6 @@ spec("tc.comment")
 spec("tc.telescope")
 spec("tc.nvim-tree")
 spec("tc.lualine")
-spec("tc.none-ls")
 spec("tc.harpoon")
 spec("tc.autopairs")
 spec("tc.gitsigns")
@@ -23,11 +22,14 @@ spec("tc.neogit")
 spec("tc.project")
 spec("tc.indentline")
 
+-- Linter y Format
+-- spec("tc.none-ls")
+
 -- Linter (dev)
--- spec("tc.nvim-lint")
+spec("tc.nvim-lint")
 
 -- Format (dev)
--- spec("tc.conform")
+spec("tc.conform")
 
 spec("tc.extras.copilot")
 spec("tc.extras.neoscroll")

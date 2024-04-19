@@ -28,21 +28,20 @@ function M.config()
 			"cssls",
 			"html",
 			"tsserver",
+			"eslint",
+			"tsserver",
 			"pyright",
 			"bashls",
 			"jsonls",
+			"yamlls",
+			"ruff",
 		},
-		automatic_installation = true,
 	})
 
 	mason_tool_installer.setup({
 		ensure_installed = {
 			"prettier",
 			"stylua",
-			"black",
-			"isort",
-			"pylint",
-			"eslint_d",
 		},
 	})
 end

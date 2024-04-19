@@ -36,7 +36,7 @@ end
 
 function M.config()
 	local wk = require("which-key")
-	-- local conform = require("conform")
+	local conform = require("conform")
 
 	wk.register({
 		["<leader>la"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
@@ -47,20 +47,16 @@ function M.config()
 		["<leader>lq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 		["<leader>lr"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
 		["<leader>lf"] = {
-			"<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+			function()
+				conform.format({
+					lsp_fallback = true,
+					async = false,
+					timeout_ms = 1000,
+				})
+			end,
 			"Format",
+			mode = { "n", "v" },
 		},
-		-- ["<leader>lf"] = {
-		-- 	function()
-		-- 		conform.format({
-		-- 			lsp_fallback = true,
-		-- 			async = false,
-		-- 			timeout_ms = 1000,
-		-- 		})
-		-- 	end,
-		-- 	"Format",
-		-- 	mode = { "n", "v" },
-		-- },
 	})
 
 	wk.register({
