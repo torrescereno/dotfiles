@@ -31,10 +31,10 @@ function M.config()
 			"eslint",
 			"tsserver",
 			"pyright",
+			"ruff_lsp",
 			"bashls",
 			"jsonls",
 			"yamlls",
-			"ruff",
 		},
 	})
 
@@ -42,7 +42,12 @@ function M.config()
 		ensure_installed = {
 			"prettier",
 			"stylua",
-			"eslint_d",
+			"ruff",
+			"mypy",
+			"black",
+			"isort",
+			"flake8",
+			"pylint",
 		},
 	})
 end

@@ -135,6 +135,7 @@ function M.config()
 			{ name = "path" },
 			{ name = "calc" },
 			{ name = "emoji" },
+			{ name = "ruff_lsp" },
 		},
 		confirm_opts = {
 			behavior = cmp.ConfirmBehavior.Replace,

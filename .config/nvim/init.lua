@@ -39,6 +39,7 @@ spec("tc.extras.todo-comments")
 spec("tc.extras.ufo")
 spec("tc.extras.neotab")
 spec("tc.extras.colorizer")
+spec("tc.extras.noice")
 -- spec("tc.extras.neotest")
 
 require("tc.lazy")

@@ -11,7 +11,7 @@ function M.config()
 		typescript = { "prettier" },
 		javascriptreact = { "prettier" },
 		typescriptreact = { "prettier" },
-		python = { "ruff" },
+		-- python = { "ruff" },
 		sh = { "shellcheck" },
 	}
 
@@ -30,5 +30,3 @@ function M.config()
 end
 
 return M
-
-

@@ -17,8 +17,11 @@ function M.config()
 		sources = {
 			formatting.stylua,
 			formatting.prettier,
-			-- formatting.black,
+			diagnostics.mypy,
+			-- diagnostics.ruff,
+			formatting.black,
 			-- diagnostics.pylint,
+			-- diagnostics.flake8,
 			completion.spell,
 		},
 	})

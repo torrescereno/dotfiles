@@ -23,6 +23,10 @@ end
 M.on_attach = function(client, bufnr)
 	lsp_keymaps(bufnr)
 
+	if client.name == "ruff_lsp" then
+		client.server_capabilities.hoverProvider = false
+	end
+
 	if client.supports_method("textDocument/inlayHint") then
 		vim.lsp.inlay_hint.enable(bufnr, true)
 	end
@@ -30,11 +34,16 @@ end
 
 function M.common_capabilities()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
+
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 	capabilities.textDocument.foldingRange = {
 		dynamicRegistration = false,
 		lineFoldingOnly = true,
 	}
+
+	capabilities.textDocument.publishDiagnostics.tagSupport.valueSet = { 2 }
+
 	return capabilities
 end
 
@@ -50,6 +59,10 @@ function M.config()
 		["<leader>ll"] = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		["<leader>lq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
 		["<leader>lr"] = { "<cmd>lua vim.lsp.buf.rename()<cr>", "Rename" },
+		-- ["<leader>lf"] = {
+		-- 	"<cmd>lua vim.lsp.buf.format({async = true, filter = function(client) return client.name ~= 'typescript-tools' end})<cr>",
+		-- 	"Format",
+		-- },
 		["<leader>lf"] = {
 			function()
 				conform.format({
@@ -80,6 +93,7 @@ function M.config()
 		"eslint",
 		"tsserver",
 		"pyright",
+		"ruff_lsp",
 		"bashls",
 		"jsonls",
 		"yamlls",
