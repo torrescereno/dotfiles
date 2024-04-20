@@ -17,11 +17,13 @@ function M.config()
 		sources = {
 			formatting.stylua,
 			formatting.prettier,
-			diagnostics.mypy,
-			-- diagnostics.ruff,
 			formatting.black,
-			-- diagnostics.pylint,
-			-- diagnostics.flake8,
+			diagnostics.mypy.with({
+				extra_args = function()
+					local virtual = os.getenv("VIRTUAL_ENV") or os.getenv("CONDA_PREFIX") or "/usr"
+					return { "--python-executable", virtual .. "/bin/python3" }
+				end,
+			}),
 			completion.spell,
 		},
 	})
