@@ -91,12 +91,12 @@ function M.config()
 		"html",
 		"tsserver",
 		"eslint",
-		"tsserver",
 		"pyright",
 		"ruff_lsp",
 		"bashls",
 		"jsonls",
 		"yamlls",
+		"astro",
 	}
 
 	local default_diagnostic_config = {

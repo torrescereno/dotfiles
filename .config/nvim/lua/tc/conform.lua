@@ -12,7 +12,6 @@ function M.config()
 			typescript = { "prettier" },
 			javascriptreact = { "prettier" },
 			typescriptreact = { "prettier" },
-			svelte = { "prettier" },
 			css = { "prettier" },
 			html = { "prettier" },
 			json = { "prettier" },

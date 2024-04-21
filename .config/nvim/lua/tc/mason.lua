@@ -28,13 +28,14 @@ function M.config()
 			"cssls",
 			"html",
 			"tsserver",
+			"tailwindcss",
 			"eslint",
-			"tsserver",
 			"pyright",
 			"ruff_lsp",
 			"bashls",
 			"jsonls",
 			"yamlls",
+			"astro",
 		},
 	})
 
@@ -48,6 +49,7 @@ function M.config()
 			"isort",
 			"flake8",
 			"pylint",
+			"eslint_d",
 		},
 	})
 end

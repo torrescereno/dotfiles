@@ -17,10 +17,10 @@ spec("tc.nvim-tree")
 spec("tc.lualine")
 spec("tc.harpoon")
 spec("tc.autopairs")
--- spec("tc.gitsigns")
--- spec("tc.neogit")
+spec("tc.gitsigns")
 spec("tc.project")
 spec("tc.indentline")
+-- spec("tc.neogit")
 
 -- Linter y Format
 -- spec("tc.none-ls")
