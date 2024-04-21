@@ -41,6 +41,7 @@ spec("tc.extras.neotab")
 spec("tc.extras.colorizer")
 spec("tc.extras.tmux-navigation")
 spec("tc.extras.noice")
+spec("tc.extras.dashboard")
 -- spec("tc.extras.neotest")
 
 require("tc.lazy")
