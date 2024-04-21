@@ -23,6 +23,8 @@ keymap("n", "<m-l>", "<C-w>l", opts)
 keymap("n", "<m-tab>", "<c-6>", opts)
 keymap("n", "<C-w>", "<Cmd>bd!<CR>", opts)
 
+-- Yunk
+keymap("x", "p", [["_dP]])
 
 -- Map esc to go to normal mode for terminal
 keymap("t", "<Esc>", "<C-Bslash><C-n>", opts)
@@ -31,8 +33,11 @@ keymap("t", "<Esc>", "<C-Bslash><C-n>", opts)
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 
--- Format
--- keymap("n", "<leader>f", vim.lsp.buf.format)
+-- Tmux
+keymap("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>")
+keymap("n", "<C-j>", "<Cmd>TmuxNavigateDown<CR>")
+keymap("n", "<C-k>", "<Cmd>TmuxNavigateUp<CR>")
+keymap("n", "<C-l>", "<Cmd>TmuxNavigateRight<CR>")
 
 -- #
 
@@ -43,5 +48,5 @@ keymap("n", "#", "#zz", opts)
 keymap("n", "g*", "g*zz", opts)
 keymap("n", "g#", "g#zz", opts)
 
-vim.cmd [[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]]
-vim.cmd [[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]]
+vim.cmd([[:amenu 10.100 mousemenu.Goto\ Definition <cmd>lua vim.lsp.buf.definition()<CR>]])
+vim.cmd([[:amenu 10.110 mousemenu.References <cmd>lua vim.lsp.buf.references()<CR>]])
