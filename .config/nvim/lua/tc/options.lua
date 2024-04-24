@@ -25,6 +25,9 @@ opt.shiftround = true
 -- Always show 8 lines of "context" above and below the cursor
 opt.scrolloff = 8
 
+-- Ignore case
+opt.ignorecase = true
+
 -- #
 opt.maxmempattern = 10000
 -- Mostly just for cmp
@@ -40,7 +43,7 @@ opt.smartcase = true
 opt.smartindent = true
 
 -- Set term gui colors (most terminals support this)
-opt.termguicolors = true
+opt.termguico = true
 
 -- Faster completion (4000ms default)
 opt.updatetime = 100
@@ -54,6 +57,12 @@ opt.fileencoding = "utf-8"
 -- Allow the mouse to be used in neovim
 opt.mouse = "a"
 
+-- Spell
+opt.spelllang = "en_us,es"
+opt.spell = true
+
+-- Backup
+opt.backup = false
 --
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
