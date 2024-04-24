@@ -43,7 +43,7 @@ opt.smartcase = true
 opt.smartindent = true
 
 -- Set term gui colors (most terminals support this)
-opt.termguico = true
+-- opt.termguico = true
 
 -- Faster completion (4000ms default)
 opt.updatetime = 100
