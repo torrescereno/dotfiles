@@ -1,6 +1,10 @@
 local M = {
 	"nvim-telescope/telescope.nvim",
-	dependencies = { { "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true } },
+	dependencies = {
+		"nvim-lua/plenary.nvim",
+		"nvim-telescope/telescope-file-browser.nvim",
+		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make", lazy = true },
+	},
 }
 
 function M.config()
@@ -15,6 +19,10 @@ function M.config()
 		["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
 		["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
 		["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
+		["<leader>fe"] = {
+			"<cmd>lua require('telescope').extensions.file_browser.file_browser({ path = 'h:p', select_buffer = true })<cr>",
+			"File Browser",
+		},
 	})
 
 	local icons = require("tc.icons")
