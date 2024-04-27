@@ -36,6 +36,7 @@ function M.config()
 			"jsonls",
 			"yamlls",
 			"astro",
+			"dockerls",
 		},
 	})
 

@@ -10,7 +10,17 @@ function M.config()
 		sync_install = false,
 		auto_install = true,
 		ignore_install = {},
-		ensure_installed = { "lua", "markdown", "markdown_inline", "bash", "python" },
+		ensure_installed = {
+			"lua",
+			"markdown",
+			"markdown_inline",
+			"bash",
+			"python",
+			"dockerfile",
+			"yaml",
+			"html",
+			"json",
+		},
 		highlight = { enable = true },
 		indent = { enable = true },
 	})
