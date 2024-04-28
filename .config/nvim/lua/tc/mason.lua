@@ -44,12 +44,12 @@ function M.config()
 		ensure_installed = {
 			"prettier",
 			"stylua",
-			"ruff",
-			"mypy",
-			"black",
-			"isort",
-			"flake8",
-			"pylint",
+			-- "ruff",
+			-- "mypy",
+			-- "black",
+			-- "isort",
+			-- "flake8",
+			-- "pylint",
 			"eslint_d",
 		},
 	})
