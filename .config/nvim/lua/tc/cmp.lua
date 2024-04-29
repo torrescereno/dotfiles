@@ -36,6 +36,15 @@ local M = {
 		{
 			"hrsh7th/cmp-nvim-lua",
 		},
+		{
+			"Saecki/crates.nvim",
+			event = { "BufRead Cargo.toml" },
+			opts = {
+				src = {
+					cmp = { enabled = true },
+				},
+			},
+		},
 	},
 }
 
@@ -136,6 +145,7 @@ function M.config()
 			{ name = "calc" },
 			{ name = "emoji" },
 			{ name = "ruff_lsp" },
+			{ name = "crates" },
 		},
 		confirm_opts = {
 			behavior = cmp.ConfirmBehavior.Replace,

@@ -37,6 +37,7 @@ function M.config()
 			"yamlls",
 			"astro",
 			"dockerls",
+			"rust_analyzer",
 		},
 	})
 

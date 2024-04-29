@@ -20,8 +20,15 @@ function M.config()
 			"yaml",
 			"html",
 			"json",
+			"vimdoc",
+			"javascript",
+			"typescript",
+			"rust",
+			"jsdoc",
+			"toml",
+			"ron",
 		},
-		highlight = { enable = true },
+		highlight = { enable = true, additional_vim_regex_highlighting = { "markdown" } },
 		indent = { enable = true },
 	})
 end
