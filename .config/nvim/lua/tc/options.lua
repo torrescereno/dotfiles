@@ -66,3 +66,6 @@ opt.backup = false
 --
 vim.g.netrw_banner = 0
 vim.g.netrw_mouse = 2
+
+-- cursorline
+-- opt.cursorline = true
