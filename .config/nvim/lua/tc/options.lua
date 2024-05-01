@@ -30,6 +30,7 @@ opt.ignorecase = true
 
 -- #
 opt.maxmempattern = 10000
+
 -- Mostly just for cmp
 opt.completeopt = { "menuone", "noselect" }
 
@@ -53,6 +54,7 @@ opt.writebackup = false
 
 -- Encoding
 opt.fileencoding = "utf-8"
+opt.encoding = "utf-8"
 
 -- Allow the mouse to be used in neovim
 opt.mouse = "a"

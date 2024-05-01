@@ -26,12 +26,19 @@ keymap("n", "<C-w>", "<Cmd>bd!<CR>", opts)
 -- Yunk
 keymap("x", "p", [["_dP]])
 
+-- Select all
+keymap("n", "<C-a>", "gg<S-v>G")
+
 -- Map esc to go to normal mode for terminal
 keymap("t", "<Esc>", "<C-Bslash><C-n>", opts)
 
 -- Move lines
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
+
+-- Split window
+keymap("n", "ss", ":split<Return>", opts)
+keymap("n", "sv", ":vsplit<Return>", opts)
 
 -- Tmux
 keymap("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>")
