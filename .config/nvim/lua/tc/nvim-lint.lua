@@ -11,7 +11,7 @@ function M.config()
 		typescript = { "eslint_d" },
 		javascriptreact = { "eslint_d" },
 		typescriptreact = { "eslint_d" },
-		-- python = { "ruff" },
+		python = { "ruff" },
 		sh = { "shellcheck" },
 	}
 

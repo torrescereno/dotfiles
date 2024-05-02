@@ -31,7 +31,7 @@ function M.config()
 			"tailwindcss",
 			"eslint",
 			"pyright",
-			"ruff_lsp",
+			-- "ruff_lsp",
 			"bashls",
 			"jsonls",
 			"yamlls",
@@ -45,7 +45,7 @@ function M.config()
 		ensure_installed = {
 			"prettier",
 			"stylua",
-			-- "ruff",
+			"ruff",
 			-- "mypy",
 			-- "black",
 			-- "isort",

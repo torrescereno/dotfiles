@@ -20,7 +20,7 @@ function M.config()
 			graphql = { "prettier" },
 			liquid = { "prettier" },
 			lua = { "stylua" },
-			-- python = { "ruff", "ruff_format" },
+			python = { "ruff", "ruff_format" },
 		},
 		format_on_save = {
 			lsp_fallback = true,

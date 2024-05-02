@@ -77,6 +77,10 @@ function M.config()
 	local conform = require("conform")
 
 	wk.register({
+		["<leader>lo"] = {
+			"<cmd>lua vim.lsp.buf.code_action({ apply = true, context = { only = { 'source.organizeImports' }, diagnostics = {}, }, })<cr>",
+			"Organize Imports",
+		},
 		["<leader>la"] = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
 		["<leader>li"] = { "<cmd>LspInfo<cr>", "Info" },
 		["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
@@ -117,11 +121,12 @@ function M.config()
 		"tsserver",
 		"eslint",
 		"pyright",
-		"ruff_lsp",
 		"bashls",
 		"jsonls",
 		"yamlls",
 		"astro",
+		"ruff",
+		-- "ruff_lsp",
 		-- "rust_analyzer",
 	}
 
@@ -172,6 +177,10 @@ function M.config()
 
 		if server == "lua_ls" then
 			require("neodev").setup({})
+		end
+
+		if server == "ruff" then
+			opts.capabilities.hoverProvider = false
 		end
 
 		lspconfig[server].setup(opts)
