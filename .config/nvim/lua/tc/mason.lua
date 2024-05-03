@@ -31,7 +31,6 @@ function M.config()
 			"tailwindcss",
 			"eslint",
 			"pyright",
-			-- "ruff_lsp",
 			"bashls",
 			"jsonls",
 			"yamlls",

@@ -34,9 +34,6 @@ local M = {
 			},
 		},
 		{
-			"hrsh7th/cmp-nvim-lua",
-		},
-		{
 			"Saecki/crates.nvim",
 			event = { "BufRead Cargo.toml" },
 			opts = {
@@ -44,6 +41,9 @@ local M = {
 					cmp = { enabled = true },
 				},
 			},
+		},
+		{
+			"hrsh7th/cmp-nvim-lua",
 		},
 	},
 }
@@ -89,10 +89,8 @@ function M.config()
 				elseif luasnip.expand_or_jumpable() then
 					luasnip.expand_or_jump()
 				elseif check_backspace() then
-					-- fallback()
 					require("neotab").tabout()
 				else
-					-- fallback()
 					require("neotab").tabout()
 				end
 			end, {

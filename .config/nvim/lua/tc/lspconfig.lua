@@ -126,8 +126,6 @@ function M.config()
 		"yamlls",
 		"astro",
 		"ruff",
-		-- "ruff_lsp",
-		-- "rust_analyzer",
 	}
 
 	local default_diagnostic_config = {
