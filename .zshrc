@@ -51,6 +51,8 @@ setopt hist_find_no_dups
 
 # Aliases
 alias ls='ls --color'
-alias ll='ls -a --color'
+alias ll='ls -laF --color'
 alias c='clear'
 alias n='nvim'
+alias a='source venv/bin/activate'
+alias z='zellij'
