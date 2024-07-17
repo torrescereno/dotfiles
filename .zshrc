@@ -55,4 +55,7 @@ alias ll='ls -laF --color'
 alias c='clear'
 alias n='nvim'
 alias a='source venv/bin/activate'
+alias d='deactivate'
+alias t='tmux'
 alias z='zellij'
+
