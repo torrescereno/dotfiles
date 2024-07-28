@@ -38,8 +38,8 @@ keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 
 -- Split window
-keymap("n", "ss", ":split<Return>", opts)
-keymap("n", "sv", ":vsplit<Return>", opts)
+-- keymap("n", "ss", ":split<Return>", opts)
+-- keymap("n", "sv", ":vsplit<Return>", opts)
 
 -- Tmux
 -- keymap("n", "<C-h>", "<Cmd>TmuxNavigateLeft<CR>")
