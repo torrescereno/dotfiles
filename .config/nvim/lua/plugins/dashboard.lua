@@ -1,9 +1,8 @@
-return {
-  {
-    "nvimdev/dashboard-nvim",
-    event = "VimEnter",
-    opts = function(_, opts)
-      local logo = [[
+local M = {
+  "nvimdev/dashboard-nvim",
+  event = "VimEnter",
+  opts = function(_, opts)
+    local logo = [[
       ___                       ___           ___     
      /\  \          ___        /\  \         /\  \    
     /::\  \        /\  \      /::\  \       /::\  \   
@@ -18,8 +17,9 @@ return {
 
     ]]
 
-      logo = string.rep("\n", 8) .. logo
-      opts.config.header = vim.split(logo, "\n")
-    end,
-  },
+    logo = string.rep("\n", 8) .. logo
+    opts.config.header = vim.split(logo, "\n")
+  end,
 }
+
+return M
