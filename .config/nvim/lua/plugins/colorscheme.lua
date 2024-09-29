@@ -24,7 +24,25 @@ return {
   -- },
 
   -- CATPPUCCIN
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+  -- { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
+
+  -- EVERFOREST
+  -- {
+  --   "sainnhe/everforest",
+  --   lazy = false,
+  --   priority = 1000,
+  --   config = function()
+  --     vim.g.everforest_enable_italic = true
+  --     vim.g.everforest_background = "hard"
+  --     vim.g.everforest_better_performance = 1
+  --     vim.g.everforest_diagnostic_text_highlight = 1
+  --   end,
+  -- },
+
+  -- ONE DARK PRO
+  {
+    "navarasu/onedark.nvim",
+  },
 
   {
     "LazyVim/LazyVim",
@@ -32,7 +50,10 @@ return {
       -- colorscheme = "gruvbox-material",
       -- colorscheme = "cyberdream",
       -- colorscheme = "tokyonight-storm",
-      colorscheme = "catppuccin",
+      -- colorscheme = "catppuccin",
+      -- colorscheme = "catppuccin-frappe",
+      -- colorscheme = "everforest",
+      colorscheme = "onedark",
     },
   },
 
