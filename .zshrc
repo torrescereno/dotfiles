@@ -25,8 +25,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 
 # Add in Powerlevel10k
 zinit ice depth=1
-zinit light romkatv/powerlevel10k
 
+zinit light romkatv/powerlevel10k
+zinit light joshskidmore/zsh-fzf-history-search
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
@@ -37,10 +38,13 @@ autoload -Uz compinit && compinit
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+ZSH_FZF_HISTORY_SEARCH_REMOVE_DUPLICATES=1
+
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
+
 setopt appendhistory
 setopt sharehistory
 setopt hist_ignore_space
@@ -58,4 +62,14 @@ alias a='source venv/bin/activate'
 alias d='deactivate'
 alias t='tmux'
 alias z='zellij'
+
+# pnpm
+export PNPM_HOME="/home/torrescereno/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Angular CLI
+source <(ng completion script)
 
