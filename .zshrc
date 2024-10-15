@@ -62,6 +62,8 @@ alias a='source venv/bin/activate'
 alias d='deactivate'
 alias t='tmux'
 alias z='zellij'
+alias yz='yazi'
+alias lg='lazygit'
 
 # pnpm
 export PNPM_HOME="/home/torrescereno/.local/share/pnpm"
