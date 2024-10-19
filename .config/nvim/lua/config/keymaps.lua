@@ -6,10 +6,6 @@
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
--- Saving files with <C-s>
--- keymap("n", "<C-s>", vim.cmd.update, opts)
--- keymap({ "i", "x" }, "<C-s>", "<Esc><Cmd>up!<CR>", opts)
-
 -- Better indent/dedent lines and blocks of text
 keymap("n", ">", ">>", opts)
 keymap("n", "<", "<<", opts)
@@ -30,32 +26,7 @@ keymap("x", "p", [["_dP]])
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G")
 
--- Map esc to go to normal mode for terminal
-keymap("t", "<Esc>", "<C-Bslash><C-n>", opts)
-
--- Move lines
-keymap("v", "J", ":m '>+1<CR>gv=gv")
-keymap("v", "K", ":m '<-2<CR>gv=gv")
-
--- Split window
--- keymap("n", "ss", ":split<Return>", opts)
--- keymap("n", "sv", ":vsplit<Return>", opts)
-
--- Tmux
-keymap("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
-keymap("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
-keymap("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
-keymap("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
-keymap("n", "<C-\\>", "<Cmd>NvimTmuxNavigateLastActive<CR>", { silent = true })
-keymap("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { silent = true })
-
-keymap("n", "<M-h>", '<Cmd>lua require("tmux").resize_left()<CR>', { silent = true })
-keymap("n", "<M-j>", '<Cmd>lua require("tmux").resize_bottom()<CR>', { silent = true })
-keymap("n", "<M-k>", '<Cmd>lua require("tmux").resize_top()<CR>', { silent = true })
-keymap("n", "<M-l>", '<Cmd>lua require("tmux").resize_right()<CR>', { silent = true })
-
--- #
-
+--
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 keymap("n", "*", "*zz", opts)
