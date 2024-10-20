@@ -89,7 +89,7 @@ layout {
 
             datetime          "{format}"
             datetime_format   "%Y-%m-%d %H:%M"
-            datetime_timezone "Santiago/America"
+            datetime_timezone "America/Santiago"
         }
     }
 }
