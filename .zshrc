@@ -8,6 +8,16 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
+# fnm
+# FNM_PATH="/home/torrescereno/.local/share/fnm"
+# if [ -d "$FNM_PATH" ]; then
+#   export PATH="/home/torrescereno/.local/share/fnm:$PATH"
+#   eval "`fnm env`"
+# fi
+#
+# eval "$(fnm env --use-on-cd --shell zsh)"
+
+
 # PYENV
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
@@ -15,6 +25,24 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv init -)"
 fi
+
+# pnpm
+export PNPM_HOME="/home/torrescereno/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Angular CLI
+source <(ng completion script)
+
+# Atuin
+. "$HOME/.atuin/bin/env"
+eval "$(atuin init zsh)"
+
+# Pipx
+export PATH="$PATH:/home/torrescereno/.local/bin"
+
 
 # ZINIT
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -40,19 +68,6 @@ autoload -Uz compinit && compinit
 
 ZSH_FZF_HISTORY_SEARCH_REMOVE_DUPLICATES=1
 
-HISTSIZE=5000
-HISTFILE=~/.zsh_history
-SAVEHIST=$HISTSIZE
-HISTDUP=erase
-
-setopt appendhistory
-setopt sharehistory
-setopt hist_ignore_space
-setopt hist_ignore_all_dups
-setopt hist_save_no_dups
-setopt hist_ignore_dups
-setopt hist_find_no_dups
-
 # Aliases
 alias ls='ls --color'
 alias ll='ls -laF --color'
@@ -64,14 +79,4 @@ alias t='tmux'
 alias z='zellij'
 alias yz='yazi'
 alias lg='lazygit'
-
-# pnpm
-export PNPM_HOME="/home/torrescereno/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-# Angular CLI
-source <(ng completion script)
 
