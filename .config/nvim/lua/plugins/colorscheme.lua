@@ -1,7 +1,19 @@
 return {
 
   -- GRUVBOX MATERIAL
-  -- { "f4z3r/gruvbox-material.nvim" },
+  -- {
+  --   "f4z3r/gruvbox-material.nvim",
+  --   priority = 1000,
+  --   opts = function(_, opts)
+  --     opts.italic = true
+  --     opts.comments = {
+  --       italics = true,
+  --     }
+  --     opts.background = {
+  --       transparent = true,
+  --     }
+  --   end,
+  -- },
 
   -- CATPPUCCIN
   {
