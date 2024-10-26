@@ -22,7 +22,7 @@ return {
     priority = 1000,
     opts = function(_, opts)
       opts.flavour = "macchiato"
-      opts.transparent_background = true
+      -- opts.transparent_background = true
     end,
   },
 

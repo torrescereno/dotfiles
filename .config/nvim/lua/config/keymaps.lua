@@ -26,6 +26,18 @@ keymap("x", "p", [["_dP]])
 -- Select all
 keymap("n", "<C-a>", "gg<S-v>G")
 
+-- Tmux
+keymap("n", "<C-h>", "<Cmd>NvimTmuxNavigateLeft<CR>", { silent = true })
+keymap("n", "<C-j>", "<Cmd>NvimTmuxNavigateDown<CR>", { silent = true })
+keymap("n", "<C-k>", "<Cmd>NvimTmuxNavigateUp<CR>", { silent = true })
+keymap("n", "<C-l>", "<Cmd>NvimTmuxNavigateRight<CR>", { silent = true })
+keymap("n", "<C-\\>", "<Cmd>NvimTmuxNavigateLastActive<CR>", { silent = true })
+keymap("n", "<C-Space>", "<Cmd>NvimTmuxNavigateNavigateNext<CR>", { silent = true })
+keymap("n", "<M-h>", '<Cmd>lua require("tmux").resize_left()<CR>', { silent = true })
+keymap("n", "<M-j>", '<Cmd>lua require("tmux").resize_bottom()<CR>', { silent = true })
+keymap("n", "<M-k>", '<Cmd>lua require("tmux").resize_top()<CR>', { silent = true })
+keymap("n", "<M-l>", '<Cmd>lua require("tmux").resize_right()<CR>', { silent = true })
+
 --
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
