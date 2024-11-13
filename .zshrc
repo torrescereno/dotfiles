@@ -1,14 +1,18 @@
-# ZINIT
+# Zinit
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 [ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
 [ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
 
 source "${ZINIT_HOME}/zinit.zsh"
 
-# Add in Powerlevel10k
-zinit ice depth=1
+# zinit ice depth=1
+# zinit light romkatv/powerlevel10k
 
-zinit light romkatv/powerlevel10k
+zinit ice as"command" from"gh-r" \
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
+zinit light starship/Starship
+
 zinit light joshskidmore/zsh-fzf-history-search
 zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
@@ -16,9 +20,6 @@ zinit light zsh-users/zsh-autosuggestions
 zinit light Aloxaf/fzf-tab
 
 autoload -Uz compinit && compinit
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 ZSH_FZF_HISTORY_SEARCH_REMOVE_DUPLICATES=1
 
@@ -35,10 +36,6 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# Powerlevel10k
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -81,8 +78,9 @@ export PATH="$PATH:/home/torrescereno/.local/bin"
 eval "$(atuin init zsh)"
 
 # Aliases
-alias ls='ls --color'
-alias ll='ls -laF --color'
+alias ls="eza --icons --color=always"
+alias ll="eza -lh -g --icons"
+alias la="eza -a --icons"
 alias c='clear'
 alias n='nvim'
 alias a='source venv/bin/activate'
@@ -91,4 +89,3 @@ alias t='tmux'
 alias z='zellij'
 alias yz='yazi'
 alias lg='lazygit'
-
