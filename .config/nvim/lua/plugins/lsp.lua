@@ -1,18 +1,5 @@
 return {
   {
-    "williamboman/mason.nvim",
-    opts = function(_, opts)
-      vim.list_extend(opts.ensure_installed, {
-        "stylua",
-        "tailwindcss-language-server",
-        "typescript-language-server",
-        "css-lsp",
-        "rust-analyzer",
-        "ruff",
-      })
-    end,
-  },
-  {
     "neovim/nvim-lspconfig",
     opts = {
       inlay_hints = {
@@ -106,5 +93,9 @@ return {
         -- },
       },
     },
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = { ensure_installed = { "rust-analyzer" } },
   },
 }
