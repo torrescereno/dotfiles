@@ -1,8 +1,3 @@
-# Zinit
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
-[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-
 source "${ZINIT_HOME}/zinit.zsh"
 
 # zinit ice depth=1
@@ -48,7 +43,7 @@ export NVM_DIR="$HOME/.nvm"
 #   export PATH="/home/torrescereno/.local/share/fnm:$PATH"
 #   eval "`fnm env`"
 # fi
-#
+
 # eval "$(fnm env --use-on-cd --shell zsh)"
 
 
@@ -73,19 +68,24 @@ source <(ng completion script)
 # Pipx
 export PATH="$PATH:/home/torrescereno/.local/bin"
 
+# Neovim
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
 # Atuin
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
 # Aliases
 alias ls="eza --icons --color=always"
-alias ll="eza -lh -g --icons"
+alias ll="eza -lh -g --icons -a"
 alias la="eza -a --icons"
 alias c='clear'
 alias n='nvim'
 alias a='source venv/bin/activate'
+alias ac='source .venv/bin/activate'
 alias d='deactivate'
 alias t='tmux'
 alias z='zellij'
 alias yz='yazi'
 alias lg='lazygit'
+alias up='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
