@@ -2,6 +2,7 @@ local M = {
   "danymat/neogen",
   keys = {
     {
+
       "<leader>cc",
       function()
         require("neogen").generate({})

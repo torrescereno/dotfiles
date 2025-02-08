@@ -1,16 +1,9 @@
 -- Keymaps are automatically loaded on the VeryLazy event
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
---
 
 local keymap = vim.keymap.set
 local opts = { noremap = true, silent = true }
-
--- Better indent/dedent lines and blocks of text
-keymap("n", ">", ">>", opts)
-keymap("n", "<", "<<", opts)
-keymap("x", ">", ">gv", opts)
-keymap("x", "<", "<gv", opts)
 
 -- Better buffer navigation/deletion
 keymap("n", "<m-h>", "<C-w>h", opts)
@@ -39,6 +32,7 @@ keymap("n", "<M-k>", '<Cmd>lua require("tmux").resize_top()<CR>', { silent = tru
 keymap("n", "<M-l>", '<Cmd>lua require("tmux").resize_right()<CR>', { silent = true })
 
 --
+
 keymap("n", "n", "nzz", opts)
 keymap("n", "N", "Nzz", opts)
 keymap("n", "*", "*zz", opts)
