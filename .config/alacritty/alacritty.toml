@@ -1,11 +1,5 @@
-import = [
-    # "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
-    "~/.config/alacritty/themes/themes/gruvbox_material_hard_dark.toml"
-    # "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
-    # "~/.config/alacritty/themes/themes/moonfly-alacritty.toml"
-]
 
-[ env ]
+[env]
 TERM = "xterm-256color"
 
 [window]
@@ -14,8 +8,21 @@ padding.y = 10
 startup_mode = "Maximized"
 decorations = "none"
 
+
 [font]
-normal.family = "Caskaydia Cove Nerd Font"
+normal.family = "CaskaydiaCove Nerd Font"
 size = 11.0
 
+[general]
+import = [
 
+  # "~/.config/alacritty/themes/themes/gruvbox_dark.toml"
+  "C:/Users/torre/AppData/Roaming/alacritty/themes/gruvbox_material_hard_dark.toml",
+  # "~/.config/alacritty/themes/themes/catppuccin_macchiato.toml"
+  # "~/.config/alacritty/themes/themes/moonfly-alacritty.toml"
+
+]
+
+# WSL
+# [terminal]
+# shell = "ubuntu"
