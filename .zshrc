@@ -1,3 +1,8 @@
+# Zinit
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+
 source "${ZINIT_HOME}/zinit.zsh"
 
 # zinit ice depth=1
@@ -38,9 +43,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # fnm
-# FNM_PATH="/home/torrescereno/.local/share/fnm"
+# FNM_PATH="$HOME/.local/share/fnm"
 # if [ -d "$FNM_PATH" ]; then
-#   export PATH="/home/torrescereno/.local/share/fnm:$PATH"
+#   export PATH="$HOME/.local/share/fnm:$PATH"
 #   eval "`fnm env`"
 # fi
 
@@ -56,7 +61,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # pnpm
-export PNPM_HOME="/home/torrescereno/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -66,7 +71,7 @@ esac
 source <(ng completion script)
 
 # Pipx
-export PATH="$PATH:/home/torrescereno/.local/bin"
+export PATH="$PATH:$HOME/.local/bin"
 
 # Neovim
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
@@ -89,3 +94,4 @@ alias z='zellij'
 alias yz='yazi'
 alias lg='lazygit'
 alias up='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
+
