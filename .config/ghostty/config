@@ -1,0 +1,13 @@
+window-decoration = false
+window-inherit-working-directory = true
+window-theme = dark
+window-save-state = always
+
+
+font-family = CaskaydiaCove Nerd Font
+font-size = 10
+
+copy-on-select = true
+
+theme = gruvbox-material-hard-dark
+
