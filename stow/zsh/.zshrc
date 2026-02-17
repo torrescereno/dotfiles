@@ -80,6 +80,9 @@ export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 . "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
+# Zoxide
+eval "$(zoxide init zsh)"
+
 # Aliases
 alias ls="eza --icons --color=always"
 alias ll="eza -lh -g --icons -a"
@@ -90,7 +93,7 @@ alias a='source venv/bin/activate'
 alias ac='source .venv/bin/activate'
 alias d='deactivate'
 alias t='tmux'
-alias z='zellij'
+alias zl='zellij'
 alias yz='yazi'
 alias lg='lazygit'
 alias up='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
