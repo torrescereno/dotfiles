@@ -18,6 +18,7 @@ PACKAGES=(
     bat
     fzf
     jq
+    duf
     unzip
     ca-certificates
     gnupg

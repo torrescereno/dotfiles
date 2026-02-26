@@ -40,7 +40,7 @@ dotfiles/
 
 ### Apt Packages
 - `zsh`, `git`, `curl`, `wget`, `stow`, `tmux`
-- `ripgrep`, `fd-find`, `bat`, `fzf`, `jq`
+- `ripgrep`, `fd-find`, `bat`, `fzf`, `jq`, `duf`
 
 ### Snap Packages
 - `nvim` - Neovim editor
