@@ -111,6 +111,7 @@ alias zl='zellij'
 alias yz='yazi'
 alias lg='lazygit'
 alias op='opencode'
+alias ag='antigravity .'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   alias up='brew update && brew upgrade && brew cleanup'
