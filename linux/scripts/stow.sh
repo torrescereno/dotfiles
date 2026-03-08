@@ -20,10 +20,21 @@ PACKAGES=(
 )
 
 for pkg in "${PACKAGES[@]}"; do
-    if [ -d "$pkg" ]; then
-        echo "  Stowing $pkg..."
-        stow -t "$HOME" "$pkg" 2>/dev/null || echo "    Warning: $pkg may have conflicts, skipping..."
+    if [ ! -d "$pkg" ]; then
+        continue
     fi
+
+    echo "  Stowing $pkg..."
+
+    if ! stow -n -t "$HOME" "$pkg" 2>/dev/null; then
+        echo "    Conflicts detected for $pkg, adopting existing files and restoring dotfiles..."
+        stow --adopt -t "$HOME" "$pkg" 2>/dev/null
+        git -C "$DOTFILES_DIR" restore "stow/$pkg/" 2>/dev/null || true
+    else
+        stow -t "$HOME" "$pkg"
+    fi
+
+    echo "    ✓ $pkg"
 done
 
 echo "==> Symlinks created!"
