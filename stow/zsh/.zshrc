@@ -61,23 +61,37 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 # pnpm
-export PNPM_HOME="$HOME/.local/share/pnpm"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export PNPM_HOME="$HOME/Library/pnpm"
+else
+  export PNPM_HOME="$HOME/.local/share/pnpm"
+fi
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
 # Angular CLI
-source <(ng completion script)
+command -v ng &>/dev/null && source <(ng completion script)
 
-# Pipx
+# Pipx / local bin
 export PATH="$PATH:$HOME/.local/bin"
 
-# Neovim
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+# Neovim (Linux only — macOS uses Homebrew)
+if [[ "$OSTYPE" == "linux"* ]]; then
+  export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+fi
+
+# Homebrew (macOS)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  if [[ -f "/opt/homebrew/bin/brew" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  elif [[ -f "/usr/local/bin/brew" ]]; then
+    eval "$(/usr/local/bin/brew shellenv)"
+  fi
+fi
 
 # Atuin
-. "$HOME/.atuin/bin/env"
 eval "$(atuin init zsh)"
 
 # Zoxide
@@ -96,5 +110,10 @@ alias t='tmux'
 alias zl='zellij'
 alias yz='yazi'
 alias lg='lazygit'
-alias up='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
+alias op='opencode'
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias up='brew update && brew upgrade && brew cleanup'
+else
+  alias up='sudo apt update && sudo apt full-upgrade -y && sudo apt autoremove -y'
+fi
